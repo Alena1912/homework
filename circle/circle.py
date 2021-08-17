@@ -5,16 +5,26 @@
 # Напишите программу, которая поможет Васе проверить его вычисления.
 
 
+
+
+from math import pi
+
+
+
 def perimeter(diameter):
-    pass
+    p=diameter*pi
+    return p
 
 
 def square(diameter):
-    pass
+    s=pi*(diameter/2)**2
+    return s
+
 
 
 if __name__ == "__main__":
     d = int(input("Диаметр сковородки = "))
 
-    print(perimeter(d))
-    print(square(d))
+    print('Длина блина ', format(perimeter(d),'.2f'))
+    print('Площаль блина', format(square(d),'.2f'))
+
