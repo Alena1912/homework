@@ -19,7 +19,12 @@
 
 
 def is_leap_year(year: int) -> bool:
-    pass
+    if year%4==0 and year%400==0:
+        wys=True
+    else:
+        wys=False
+
+    return wys
 
 
 if __name__ == "__main__":
