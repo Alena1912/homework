@@ -11,23 +11,43 @@
 # Для решения понадобится использовать деление по модулю %
 # или целочисленное деление //.
 
-
 def find_entrance(f, n):
     """
     f - число этажей в доме
     n - номер квартиры
     """
+    if n <= f * 4:
+        entrance = 1
+    elif n > f * 4 and n % (f * 4) == 0:
+        entrance = n // (f * 4)
+    else:
+        entrance = n // (f * 4) + 1
 
-    return 0
+    return entrance
 
 
 def find_floor(f, n):
-    """
-    f - число этажей в доме
-    n - номер квартиры
-    """
 
-    return 0
+    p = f * 4
+    if n > p:
+
+        b = n - (n // p) * p
+        if b <= 4 and b > 0:
+            floor = 1
+        elif b == 0:
+            floor = f
+        elif b % 4 == 0:
+            floor = b // 4
+        else:
+            floor = (b // 4) + 1
+
+    else:
+        if n % 4 == 0:
+            floor = n // 4
+        else:
+            floor = n // 4 + 1
+
+    return floor
 
 
 if __name__ == "__main__":
@@ -36,4 +56,7 @@ if __name__ == "__main__":
 
     entrance = find_entrance(floors, flat_num)
     floor = find_floor(floors, flat_num)
-    print(entrance, floor)
+    print('Entrance: ', entrance)
+    print('Floor: ', floor)
+
+
