@@ -19,7 +19,7 @@
 
 
 def is_leap_year(year: int) -> bool:
-    if year%4==0 or year%400==0:
+    if (year%4==0 and year%100!=0) or year%400==0:
         wys=True
     else:
         wys=False
