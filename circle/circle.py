@@ -9,18 +9,11 @@
 
 from math import pi
 
-
-
 def perimeter(diameter):
-    p=diameter*pi
-    return p
-
+    return diameter * pi
 
 def square(diameter):
-    s=pi*(diameter/2)**2
-    return s
-
-
+    return pi * (diameter / 2) ** 2
 
 if __name__ == "__main__":
     d = int(input("Диаметр сковородки = "))
