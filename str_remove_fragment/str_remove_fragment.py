@@ -8,4 +8,13 @@
 
 
 def remove_fragment(s: str, sep: str) -> str:
-    pass
+    k = s.count(sep)
+
+    if k < 2:
+        return s
+    else:
+        first = s.partition(sep)  # разбивка на три элемента с первой втречи сеп
+        last = s.rpartition(sep)  # разбивка на три элемента с последней втречи сеп
+        s = first[0] + last[2]
+
+        return s

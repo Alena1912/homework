@@ -19,4 +19,28 @@ QUEEN_VAL = 9  # ферзь
 
 
 def calc_chess_balance(fen: str) -> int:
-    pass
+    fen1 = fen.partition('w')
+    fen=fen1[0]
+    count=0
+    for i in fen:
+        if i=='p':
+            count-=1
+        elif i=='P':
+            count+=1
+        elif i=='n' or i=='b':
+            count-=3
+        elif i=='N' or i=='B':
+            count+=3
+        elif i=='r':
+            count-=5
+        elif i=='R':
+            count+=5
+        elif i=='q':
+            count-=9
+        elif i=='Q':
+            count+=9
+        else:
+            count+=0
+
+    return count
+
