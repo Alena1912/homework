@@ -20,11 +20,20 @@ r"""
    3
 """
 
-
 from math import pi, sin, cos
 
 R = 3.0
 
 
 def polygon_vertices(n: int, r: float = R) -> list:
-    pass
+    x, y = 0, r
+    koordinaty = [(x, y)]
+    ugol = -(2 * pi / n)
+
+    for i in range(1, n):
+        x1 = x * cos(ugol) - y * sin(ugol)
+        y1 = x * sin(ugol) + y * cos(ugol)
+        x, y = x1, y1
+        koordinaty.append((x1, y1))
+
+    return koordinaty
