@@ -13,4 +13,15 @@ https://en.wikipedia.org/wiki/Fizz_buzz
 
 
 def fizzbuzz(n: int) -> str:
-    pass
+    if (n % 3 == 0 and n % 5 == 0):
+        a = 'FizzBuzz'
+        return a
+    elif n % 3 == 0:
+        a = 'Fizz'
+        return a
+    elif n % 5 == 0:
+        a = 'Buzz'
+        return a
+    else:
+        num = str(n)
+        return num
